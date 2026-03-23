@@ -1,9 +1,6 @@
 # 學生課程管理系統 - 練習複合主鍵
 
 [Notion](https://lucashsu95.notion.site/2f3c5e649c8f802d94dfc8f16a34b4b6?source=copy_link)
-程式碼（clone 下來接著繼續做即可，也有 postman 的測試集合）：
-
-https://github.com/lucashsu95/course-management-springboot
 
 ## 1. 情境故事
 
