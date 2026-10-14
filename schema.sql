@@ -1,0 +1,10 @@
+create table Book (id varchar(255) not null, author varchar(255), title varchar(255), primary key (id)) engine=InnoDB;
+create table Reader (id varchar(255) not null, email varchar(255), name varchar(255), primary key (id)) engine=InnoDB;
+create table ReaderBook (bookId varchar(255) not null, readerId varchar(255) not null, borrowDate datetime(6), primary key (bookId, readerId)) engine=InnoDB;
+alter table ReaderBook add constraint FK9tvo1xs8cb3r6ffw9m1sxfl35 foreign key (bookId) references Book (id);
+alter table ReaderBook add constraint FKdoyeiwgcg820wqdng8aes50mp foreign key (readerId) references Reader (id);
+create table Book (id varchar(255) not null, author varchar(255), title varchar(255), primary key (id)) engine=InnoDB;
+create table Reader (id varchar(255) not null, email varchar(255), name varchar(255), primary key (id)) engine=InnoDB;
+create table ReaderBook (bookId varchar(255) not null, readerId varchar(255) not null, borrowDate datetime(6), primary key (bookId, readerId)) engine=InnoDB;
+alter table ReaderBook add constraint FK9tvo1xs8cb3r6ffw9m1sxfl35 foreign key (bookId) references Book (id);
+alter table ReaderBook add constraint FKdoyeiwgcg820wqdng8aes50mp foreign key (readerId) references Reader (id);

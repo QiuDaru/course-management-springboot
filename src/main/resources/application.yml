@@ -26,7 +26,7 @@ spring:
     show-sql: false
     generate-ddl: false
     hibernate:
-      ddl-auto: none
+      ddl-auto: update
       naming:
         implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
@@ -37,6 +37,13 @@ spring:
           auto: ${spring.jpa.hibernate.ddl-auto}
         show_sql: ${spring.jpa.show-sql}
         format_sql: ${spring.jpa.show-sql}
+#用於自動建立SQL檔案
+      javax:
+        persistence:
+          schema-generation:
+            scripts:
+              action: create
+              create-target: schema.sql
   mvc:
     pathmatch:
       matching-strategy: ant_path_matcher
