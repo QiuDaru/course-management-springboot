@@ -19,10 +19,7 @@ import org.springframework.web.multipart.MaxUploadSizeExceededException;
 import tw.edu.ntub.birc.common.exception.ProjectException;
 import tw.edu.ntub.birc.common.exception.UnknownException;
 import tw.edu.ntub.birc.common.exception.date.ParseDateException;
-import tw.edu.ntub.imd.birc.coursemanagement.exception.ConvertPropertyException;
-import tw.edu.ntub.imd.birc.coursemanagement.exception.MethodNotSupportedException;
-import tw.edu.ntub.imd.birc.coursemanagement.exception.NullRequestBodyException;
-import tw.edu.ntub.imd.birc.coursemanagement.exception.RequiredParameterException;
+import tw.edu.ntub.imd.birc.coursemanagement.exception.*;
 import tw.edu.ntub.imd.birc.coursemanagement.exception.file.FileNotExistException;
 import tw.edu.ntub.imd.birc.coursemanagement.exception.file.UploadFileTooLargeException;
 import tw.edu.ntub.imd.birc.coursemanagement.exception.form.InvalidFormDateFormatException;
@@ -181,6 +178,15 @@ public class ExceptionHandleController {
     @ExceptionHandler(Exception.class)
     public ResponseEntity<String> handleUnknownException(Exception e) {
         return ResponseEntityBuilder.error(new UnknownException(e)).build();
+    }
+
+    @ExceptionHandler(ApiException.class)
+    public ResponseEntity<String> handleApiException(ApiException e) {
+        return ResponseEntityBuilder.error()
+                .status(e.getStatus())
+                .errorCode(e.getErrorCode())
+                .message(e.getMessage())
+                .build();
     }
 }
 

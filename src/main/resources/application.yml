@@ -37,7 +37,11 @@ spring:
           auto: ${spring.jpa.hibernate.ddl-auto}
         show_sql: ${spring.jpa.show-sql}
         format_sql: ${spring.jpa.show-sql}
+<<<<<<< HEAD
 
+=======
+#用於自動建立SQL檔案
+>>>>>>> 816cc145ffa90a412a776ce5140ed08304a74382
       javax:
         persistence:
           schema-generation:
