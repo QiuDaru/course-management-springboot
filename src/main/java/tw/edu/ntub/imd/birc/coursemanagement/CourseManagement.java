@@ -11,6 +11,7 @@ import org.springframework.boot.autoconfigure.security.servlet.UserDetailsServic
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.context.annotation.Bean;
+import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 import tw.edu.ntub.imd.birc.coursemanagement.config.provider.properties.FileProperties;
 import tw.edu.ntub.imd.birc.coursemanagement.dto.file.directory.Directory;
 import tw.edu.ntub.imd.birc.coursemanagement.dto.file.directory.DirectoryImpl;
@@ -19,6 +20,7 @@ import tw.edu.ntub.imd.birc.coursemanagement.service.BaseViewService;
 import tw.edu.ntub.imd.birc.coursemanagement.util.http.ResponseUtils;
 import java.nio.file.Paths;
 
+@EnableJpaAuditing
 @SpringBootApplication(exclude = {UserDetailsServiceAutoConfiguration.class})
 public class CourseManagement extends SpringBootServletInitializer {
     @Override
